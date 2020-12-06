@@ -54,6 +54,7 @@ Role Variables
 - `webcam_width`: 640
 - `webcam_height` : 480
 - `webcam_fps`: 10 (frames per second)
+- `webcam_credentials`: "default:password"
 - `custom_input` : "input_uvc.so" (input parameters to be used with 'custom' webcam type)
 
 See https://community.octoprint.org/t/available-mjpg-streamer-configuration-options/1106
