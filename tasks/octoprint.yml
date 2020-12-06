@@ -4,7 +4,7 @@
 - name: Install python dependencies.
   package:
     name:
-      - python-pip
+      - python3-pip
       - python-dev
       - python-setuptools
     state: present
