@@ -18,7 +18,6 @@ webcam_user: mjpg_streamer
 webcam_port: 8080
 webcam_type: usb
 webcam_width: 640
-webcam_height: 480 
+webcam_height: 480
 webcam_fps: 10
 custom_input: "input_uvc.so"
-webcam_credentials: "default:password"

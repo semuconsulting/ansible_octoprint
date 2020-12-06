@@ -1,19 +1,19 @@
 accessControl:
-  salt: 
+  salt:
 api:
-  key: 
+  key:
 plugins:
   announcements:
     _config_version: 1
   discovery:
-    upnpUuid: 
+    upnpUuid:
   errortracking:
-    unique_id: 
+    unique_id:
   softwareupdate:
     _config_version: 6
   tracking:
     enabled: true
-    unique_id: 
+    unique_id:
 printerProfiles:
   default: _default
 server:
@@ -26,7 +26,7 @@ server:
     enabled: true
   pluginBlacklist:
     enabled: true
-  secretKey: 
+  secretKey:
   seenWizards:
     corewizard: 3
     tracking: null
@@ -44,7 +44,7 @@ temperature:
     chamber: null
     extruder: 200
     name: PLA
-{% if install_mjpg_streamer == true -%} 
+{% if install_mjpg_streamer == true -%}
 system:
   actions:
   - action: streamon
@@ -57,6 +57,6 @@ system:
     name: Stop video stream
 webcam:
   ffmpeg: /usr/bin/ffmpeg
-  snapshot: http://{{ webcam_credentials }}@localhost:{{ webcam_port }}/?action=snapshot
-  stream: http://{{ webcam_credentials }}@{{ ansible_default_ipv4.address }}:{{ webcam_port }}/?action=stream
+  snapshot: http://localhost:{{ webcam_port }}/?action=snapshot
+  stream: http://{{ ansible_default_ipv4.address }}:{{ webcam_port }}/?action=stream
 {% endif %}
