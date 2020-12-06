@@ -58,5 +58,5 @@ system:
 webcam:
   ffmpeg: /usr/bin/ffmpeg
   snapshot: http://{{ webcam_credentials }}@localhost:{{ webcam_port }}/?action=snapshot
-  stream: http://{{ ansible_default_ipv4.address }}:{{ webcam_port }}/?action=stream
+  stream: http://{{ webcam_credentials }}@{{ ansible_default_ipv4.address }}:{{ webcam_port }}/?action=stream
 {% endif %}
