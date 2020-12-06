@@ -6,12 +6,12 @@ Wants=network-online.target
 [Service]
 User={{ webcam_user }}
 Environment=LD_LIBRARY_PATH={{ webcam_dir }}
-{% if webcam_type == 'raspi' -%} 
-ExecStart={{ webcam_dir }}/mjpg_streamer -o "output_http.so -w {{ webcam_dir }}/www" -i "input_raspicam.so -x {{ webcam_width }} -y {{ webcam_height }} -fps {{ webcam_fps }}"
+{% if webcam_type == 'raspi' -%}
+ExecStart={{ webcam_dir }}/mjpg_streamer -o "output_http.so -w {{ webcam_dir }}/www" -i "input_raspicam.so -x {{ webcam_width }} -y {{ webcam_height }} -fps {{ webcam_fps }} -c {{ webcam_credentials }}"
 {% elif webcam_type == 'custom' -%}
-ExecStart={{ webcam_dir }}/mjpg_streamer -o "output_http.so -w {{ webcam_dir }}/www" -i "{{ custom_input }}"
+ExecStart={{ webcam_dir }}/mjpg_streamer -o "output_http.so -w {{ webcam_dir }}/www" -i "{{ custom_input }} -c {{ webcam_credentials }}"
 {% else -%}
-ExecStart={{ webcam_dir }}/mjpg_streamer -o "output_http.so -w {{ webcam_dir }}/www" -i "input_uvc.so -r {{ webcam_width }}x{{ webcam_height }} -f {{ webcam_fps }}"
+ExecStart={{ webcam_dir }}/mjpg_streamer -o "output_http.so -w {{ webcam_dir }}/www" -i "input_uvc.so -r {{ webcam_width }}x{{ webcam_height }} -f {{ webcam_fps }} -c {{ webcam_credentials }}"
 {% endif -%}
 
 [Install]
